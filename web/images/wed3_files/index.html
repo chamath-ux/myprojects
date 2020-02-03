@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://s0.2mdn.net/8728568/1568803922021/300x250/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ad.size" content="width=300,height=250">
+    <title>Village House: 300x250</title>
+    <link rel="stylesheet" href="./style.css"> 
+    <!-- clickTag url-->
+    <script type="text/javascript">
+        var clickTag = "http://www.google.com";
+    </script>       
+<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script></head>
+<body>
+    <div id="ad">
+        <div id="banner" style="visibility: visible;">
+
+            <!-- ============== Frame One ============= -->
+            <div id="frame_one">
+              <img src="./img1.jpg" alt="" class="img1" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+              <img src="./img2.jpg" alt="" class="img2" style="transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, -225, 0);">
+              <div class="imgBgDiv">
+                <img src="./imgBg.jpg" alt="" class="Bg">
+              </div>
+              <img src="./square.png" alt="" class="square" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+              <div class="squareDiv">
+                <img src="./logo1.png" alt="" class="logo1" style="opacity: 0.999758; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+                <div class="colors">
+                  <div class="c1 col" style="left: 100%; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                  <div class="c2 col" style="left: 100%; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                  <div class="c3 col" style="left: 100%; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                  <div class="c4 col" style="left: 93.8192%; transform: matrix3d(1, 1.07338e-05, 0, 0, -1.07338e-05, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);"></div>
+                </div>
+              </div>
+              <img src="./txt1a.png" alt="" class="txt1" style="opacity: 0.288029; transform: matrix3d(1, 0.000248525, 0, 0, -0.000248525, 1, 0, 0, 0, 0, 1, 0, 0, 14.2394, 0, 1);">
+              <img src="./txt1b.png" alt="" class="txt1" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt1c.png" alt="" class="txt1" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt1d.png" alt="" class="txt1" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt2a.png" alt="" class="txt2" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt2b.png" alt="" class="txt2" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt3a.png" alt="" class="txt3" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt3b.png" alt="" class="txt3" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt3c.png" alt="" class="txt3" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt4a.png" alt="" class="txt4" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt4b.png" alt="" class="txt4" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt4c.png" alt="" class="txt4" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+            </div>
+            
+            <!-- ============== Frame Two ============= -->
+            <div id="frame_two">
+              <img src="./img3.jpg" alt="" class="img3" style="opacity: 0;">
+              <div class="imgBgDiv2" style="opacity: 0;">
+                <img src="./imgBg.jpg" alt="" class="Bg">
+              </div>
+              <img src="./logo2.png" alt="" class="logo2" style="opacity: 0;">
+              <img src="./txt5a.png" alt="" class="txt5" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt5b.png" alt="" class="txt5" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt5c.png" alt="" class="txt5" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./txt5d.png" alt="" class="txt5" style="opacity: 0; transform: matrix(0.99999, 0.00034, -0.00034, 0.99999, 0, 20);">
+              <img src="./cta.png" alt="" class="cta" style="opacity: 0;">
+              <img src="./cta_hover.png" alt="" class="cta_hover" style="opacity: 0;">
+              <div class="colors2">
+                <div class="c1 col2"></div>
+                <div class="c2 col2"></div>
+                <div class="c3 col2"></div>
+                <div class="c4 col2"></div>
+              </div>
+            </div>
+            
+           
+            <!-- Fallback & clickTag -->
+            <a href="javascript:void(0);" onclick="window.open(window.clickTag)" class="clicktag">
+            <!--[if lte IE 8]> <img src="fallback.jpg" alt="" class="fallback"> <![endif]-->
+            </a>
+            
+        </div><!-- // End Banner Div -->
+    </div> <!-- // End Ad Div -->
+    
+    <script src="./tweenmax_2.0.1_min.js.download"></script>
+    <script src="./custom.js.download"></script>
+
+</body></html>

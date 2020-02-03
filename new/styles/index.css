@@ -1,0 +1,108 @@
+ h1{
+               font-style: italic;
+            font-weight: bold;
+            font-size:30px;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            
+            
+        }
+        .container{
+            min-height: 1000px; 
+        }
+        .jumbotron{
+            
+          
+            color:black;
+         margin-bottom: 0px;
+           width:100%;
+            font-weight: bold;
+            text-shadow: 2px;
+            height:400px;
+            text-align: left;
+        }
+        .jumbotron h1{
+            
+            font-weight: bold;
+            margin-top: 70px;
+            font-size: 50px;
+               font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            color:#cc6600;
+        }
+ 
+        
+      
+        h3{
+            font-weight: bold;
+              font-style: italic;
+            margin-top: 10px;
+        }
+        #col-sm-4{
+            margin-top:2px;
+            background-color: #f0f5f5;
+            
+        }
+        #col-sm-4 h1 {
+            font-style: italic;
+            font-weight: bold;
+            font-size:30px;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            
+        }
+         #col-sm-4 p {
+            font-style: italic;
+            font-weight: bold;
+           
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            
+        }
+       
+        .footer{
+     position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   font-weight: bold;
+            
+        text-align: center;
+   color: black;
+  
+        }
+        .footer ul {
+            
+            	list-style-type:none;
+        }
+        .box1{
+                   border: 1px solid;
+              border-color: #e0ebeb;
+            
+
+}
+        .box1 h1{
+            font-size:15px;
+          
+        }
+      
+.modal-title {
+    font-size:18px;
+     font-style: italic;
+            font-weight: bold;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.modal-body ul{
+    font-size:15px;
+}
+        .box{
+            border: 1px solid;
+              border-color: #e0ebeb;
+            
+        }
+        .box .col-sm-4 img{
+            
+            width:100%;
+        }
+        .img-thumbnail{
+            height: 10%;
+        }
+        .carousel-caption{
+            color:#1a0000;
+        }

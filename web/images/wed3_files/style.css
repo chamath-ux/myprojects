@@ -1,0 +1,37 @@
+/*-------------------------------------
+    Reset
+---------------------------------------*/
+*           {margin: 0; padding: 0; position: absolute; }
+#banner *   {position: absolute; }
+#banner br  {position: static; }
+img         {border: none; width: 300px;}
+/*-------------------------------------
+    Layout
+---------------------------------------*/
+
+#ad           {width: 300px; height: 250px; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+#banner       {position: absolute; display: block; width: 300px; height: 250px; overflow: hidden; cursor: pointer; visibility: hidden;  background: #7ed1ff; border:0px solid rgba(255, 255, 255, .5); -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clicktag     {width: 100%; height: 100%; z-index: 10; cursor: pointer; background:gray; opacity:0; }
+.clicktag img {border: none; outline: none; }
+#frame_one, #frame_two, #frame_three{width: 100%; height: 250px;}
+/*-------------------------------------
+    Banner Body
+---------------------------------------*/
+.cta_hover  				{opacity: 0;}
+.img1, .img2, .img3	{width: 325px;}
+.img3								{left: -25px;}
+.logo1							{left: -30px; top: -30px;}
+.imgBgDiv						{width: 100px; height: 250px; left: 0px; bottom:0; overflow: hidden;}
+.imgBgDiv2					{width: 150px; height: 250px; left: 0px; bottom:0; overflow: hidden;}
+.imgBgDiv img,
+.imgBgDiv2 img			{bottom:0;}
+.squareDiv					{width: 130px; height: 190px; left: 30px; top:30px; overflow: hidden;}
+
+.colors,.colors2, 
+.col,.col2 					{width: 100%; height: 100%;}
+.col	 							{left: 100%;}
+.col2 							{left: -100%;}
+.c1									{background: #087bbc;}
+.c2									{background:#1a89c7}
+.c3									{background:#379fd8}
+.c4									{background:#65bff1}

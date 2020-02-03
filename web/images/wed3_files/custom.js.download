@@ -1,0 +1,74 @@
+var banner = document.getElementById('banner');
+var ctaAnimation = false;
+var mtl = new TimelineMax({paused:true, repeat:0, repeatDelay:2.5}),
+    tl1 = new TimelineMax();
+  
+/*---------------------------------------
+  Timeline Animation
+---------------------------------------*/  
+  tl1.set(banner, {visibility: "visible"})
+	.set(".cta_hover", {alpha:0})
+	.add(function(){ctaAnimation = false;})
+	.from(".img1", 1, {x:-25, rotation:0.02, ease:Sine.easeOut})
+	.from(".square", .5, {alpha:0, x:-20, rotation:0.02, ease:Sine.easeOut},"-=.8")
+	.staggerFrom(".col", .9, {left:"-101%", rotation:0.02, ease:Power3.easeIn}, .1, "-=.5")
+	.from(".logo1", .5, {alpha:0, rotation:0.02, ease:Sine.easeOut}, "-=.5")
+	
+	.staggerFrom(".txt1", .5, {y:20, alpha:0, rotation:0.02, ease:Sine.easeOut}, .12, "-=.1")
+	.staggerTo(".txt1", .5, {y:-20, alpha:0, rotation:0.02, ease:Sine.easeIn}, .12, "+=.8")
+	  
+	.staggerFrom(".txt2", .5, {y:20, alpha:0, rotation:0.02, ease:Sine.easeOut}, .12, "-=.1")
+	.add("firstImg", "+=.8")
+	.to(".img1", 1.5, {x:225, rotation:0.02, ease:Expo.easeInOut}, "firstImg")
+	.from(".img2", 1.5, {x:-225, rotation:0.02, ease:Expo.easeInOut}, "firstImg")
+	.staggerTo(".txt2", .5, {y:-20, alpha:0, rotation:0.02, ease:Sine.easeIn}, .12, "-=1.35")
+	.staggerFrom(".txt3", .5, {y:20, alpha:0, rotation:0.02, ease:Sine.easeOut}, .12, "-=.6")
+	
+	.staggerTo(".txt3", .5, {y:-20, alpha:0, rotation:0.02, ease:Sine.easeIn}, .12, "+=1")
+	.staggerFrom(".txt4", .5, {y:20, alpha:0, rotation:0.02, ease:Sine.easeOut}, .12)
+	
+
+	.staggerTo(".col2", .8, {x:600, rotation:0.02, ease:Power3.easeIn}, .1, "+=1")
+	.from(".img3,.imgBgDiv2,.logo2", .4, {alpha:0, ease:Sine.easeIn}, "-=.6")
+	.to(".img3", 1.4, {x:25, rotation:0.02, ease:Sine.easeOut})
+	.staggerFrom(".txt5", .5, {y:20, alpha:0, rotation:0.02, ease:Sine.easeOut}, .15, "-=1.2")
+	.from(".cta", .3, {alpha:0, ease:Sine.easeOut}, "-=.2")
+	.to(".cta_hover", .3, {alpha:1, repeat:1, repeatDelay:0.4, yoyo:true, ease:Sine.easeInOut, onComplete:hoverInOut}, "+=.5")
+  ;
+
+/*-------------------------------------
+  Add all timelines to master timeline...
+---------------------------------------*/
+    mtl.add([tl1]);
+
+
+/*-------------------------------------
+  Window Onload...
+---------------------------------------*/
+window.onload = function() { 
+    mtl.play();
+    // mtl.stop(2);
+};
+
+/*-------------------------------------
+  Hover effect...
+---------------------------------------*/
+function hoverInOut(){
+  ctaAnimation = true;
+}
+
+banner.addEventListener("mouseover", function(){
+  if(ctaAnimation)
+    TweenMax.to(".cta_hover", .4, {alpha:1, ease:Sine.easeInOut});
+})
+
+banner.addEventListener("mouseout", function(){
+  if(ctaAnimation)
+    TweenMax.to(".cta_hover", .4, {alpha:0, ease:Sine.easeInOut});
+})
+
+/*-------------------------------------
+  Total Animation Duration...
+---------------------------------------*/
+var currentDuration = mtl.totalDuration();
+console.log(currentDuration); 
